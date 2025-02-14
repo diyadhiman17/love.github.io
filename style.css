@@ -1,0 +1,245 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  color: white;
+  background-color: black;
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid for manual positioning */
+  grid-template-rows: repeat(12, minmax(50px, auto)); /* 12 rows for grid positioning */
+  gap: 10px;
+  height: 340vh;
+  margin: 0;
+  
+}
+
+
+header {
+  position: sticky;
+  top:0;
+  grid-column: 9 / -1;
+  grid-row: 1;
+  z-index:101;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  list-style: none;
+}
+
+
+nav ul li a {
+  font-family: "IBM Plex Mono", serif;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.text{
+  position: relative;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr); /* Align with the body grid */ 
+   grid-template-rows: auto; /* Auto height for rows */ 
+    gap: 10px; /* Space between grid items */  
+    grid-column: 1 / -1;
+}
+
+
+.image {
+  position: absolute; /* This positions the image relative to its parent */
+  top: 350px;
+  right: 30px;
+  width: 25%;
+  height: auto;
+  position:fixed;
+  z-index: -1; /* Ensure the image stays behind the text */
+}
+
+
+.h1-section {
+  
+  font-family: "miller-banner", serif;
+  font-weight: 100;
+  position:absolute;
+  text-wrap: no wrap;
+  line-height: 1;
+  color:white;
+  font-size: 150px;
+ top:450px;
+  left: 50px;
+  grid-column: 1 / span 12; 
+  grid-row: 3;
+  transition: all 0.6s ease-in-out;
+}
+
+
+.h2-section {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+ 
+  font-size:16px;
+top: 1000px;
+left: 50px;
+  grid-column: 1 / span 6;
+  grid-row: 12 / span 2;
+}
+
+
+.h3-section {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  font-size:15px;
+
+  padding-top: 1000px;
+  grid-column: 9 / span 3;
+  grid-row: 12 ;
+}
+
+.h4-section {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  text-transform: lowercase;
+  top: 20px;
+  font-size:16px;
+  
+  grid-column: 9 / span 2;
+  grid-row: 16;
+}
+
+
+.h5-section{
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  text-transform: lowercase;
+  font-size:12px;
+  
+  padding-left: 50px;
+  grid-column: 1 / span 2; 
+  grid-row: 17;
+}
+
+
+.h6-section{
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  text-transform: lowercase;
+  font-size:12px;
+ 
+  padding-left: 50px;
+  grid-column: 3 / span 2; 
+  grid-row: 17;
+}
+
+
+
+ p {
+  position: relative;
+  text-transform: lowercase;
+  font-size:12px;
+  font-weight:100;
+  padding-left: 50px;
+  grid-column: 3 / span 2; 
+  grid-row: 13;
+}
+
+
+.mainlinks {
+  grid-column: 3 / span 10; /* Adjust the start and span of columns */
+  grid-row: 22 / span 2; /* Adjust the start and span of rows */
+  display: flex; /* Optional: for arranging items horizontally or vertically */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start */
+ z-index:100;
+  padding-left:50px;
+  padding-top:350px;
+  font-family: "kepler-std", serif;
+ 
+}
+
+
+/* Links Section */
+.mainlinks ul {
+  
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 20px 0;
+}
+
+
+.mainlinks ul li{
+  font-family:"IBM Plex Mono", serif ;
+}
+
+
+.mainlinks ul li a {
+  font-family: "miller-banner", serif;
+  text-decoration: none;
+  font-size: 60px;
+  line-height: 1.2;
+  
+  font-weight: 500;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+
+.mainlinks ul li a:hover {
+  color: gray;
+}
+
+
+/* Initially hide the elements */
+.h2-section, .h3-section, .h4-section, .h5-section, .h6-section {
+  opacity: 0;
+  transform: translateY(20px); /* Slight upward movement */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+
+/* When elements are in view */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;  /* Size of the cursor */
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  pointer-events: none; /* Prevents interfering with clicks */
+  z-index: 9999; /* Keeps it on top */
+  transform: translate(-50%, -50%); /* Centers the dot */
+}
+.custom-cursor.hover {
+  width: 50px;
+  height: 30px;
+  transform: translate(-50%, -50%) scale(1.2);
+}
