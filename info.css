@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor:none;
   }
   
   body {
@@ -165,3 +166,13 @@
   transform: translateY(0);
 }
 
+.custom-cursor {
+    position: fixed;
+    width: 20px;  /* Size of the cursor */
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none; /* Prevents interfering with clicks */
+    z-index: 9999; /* Keeps it on top */
+    transform: translate(-50%, -50%); /* Centers the dot */
+  }

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         entry.target.classList.remove("fade-in"); // Remove on scroll-out (optional)
       }
     });
-  }, { threshold: 0.1 }); // Trigger when 20% of the element is visible
+  }, { threshold: 0.1 });
 
   fadeElements.forEach(el => observer.observe(el));
 });
@@ -46,5 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("mousemove", function (e) {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const highlightWord = document.querySelector(".highlight");
+  const navLinks = document.querySelectorAll("nav ul li a");
+  const image = document.getElementById("hover-image");
+
+  highlightWord.addEventListener("mouseenter", function () {
+    // Change nav links color
+    navLinks.forEach(link => link.classList.add("hover-effect"));
+
+    // Change image
+    image.src = "images/indexr.jpg"; // Replace with the new image path
+  });
+
+  highlightWord.addEventListener("mouseleave", function () {
+    // Revert nav links color
+    navLinks.forEach(link => link.classList.remove("hover-effect"));
+
+    // Revert image
+    image.src = "images/index.jpg"; // Original image path
   });
 });

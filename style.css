@@ -17,6 +17,7 @@ body {
   gap: 10px;
   height: 340vh;
   margin: 0;
+  overflow-x: hidden;
   
 }
 
@@ -43,34 +44,47 @@ nav ul li a {
   color: white;
   font-size: 16px;
   font-weight: 400;
+  transition: color 0.3s ease;
 }
-
+nav ul li a.hover-effect {
+  color: red; 
+}
 
 .text{
   position: relative;
   display:grid;
-  grid-template-columns: repeat(12, 1fr); /* Align with the body grid */ 
-   grid-template-rows: auto; /* Auto height for rows */ 
-    gap: 10px; /* Space between grid items */  
+  grid-template-columns: repeat(12, 1fr); 
+   grid-template-rows: auto; 
+    gap: 10px;  
     grid-column: 1 / -1;
 }
 
 
 .image {
-  position: absolute; /* This positions the image relative to its parent */
-  top: 350px;
-  right: 30px;
-  width: 25%;
+  position: absolute; 
+  top: 420px;
+  right: 0px;
+  width: 20%;
   height: auto;
   position:fixed;
-  z-index: -1; /* Ensure the image stays behind the text */
+  z-index: -1; 
+  transition: opacity 0.5s ease-in-out;
 }
 
+.highlight {
+  color: white; /* Default color */
+  transition: color 0.1s ease-in-out;
+}
 
+.h1-section:hover .highlight {
+  color: red;
+}
 .h1-section {
   
-  font-family: "miller-banner", serif;
-  font-weight: 100;
+  font-family: "celtic-mn", sans-serif;
+font-weight: 400;
+font-style: normal;
+
   position:absolute;
   text-wrap: no wrap;
   line-height: 1;
@@ -90,7 +104,7 @@ nav ul li a {
   font-style: normal;
   position: relative;
  
-  font-size:16px;
+  font-size:14px;
 top: 1000px;
 left: 50px;
   grid-column: 1 / span 6;
@@ -103,7 +117,7 @@ left: 50px;
   font-weight: 400;
   font-style: normal;
   position: relative;
-  font-size:15px;
+  font-size:14px;
 
   padding-top: 1000px;
   grid-column: 9 / span 3;
@@ -117,7 +131,7 @@ left: 50px;
   position: relative;
   text-transform: lowercase;
   top: 20px;
-  font-size:16px;
+  font-size:14px;
   
   grid-column: 9 / span 2;
   grid-row: 16;
@@ -130,10 +144,10 @@ left: 50px;
   font-style: normal;
   position: relative;
   text-transform: lowercase;
-  font-size:12px;
+  font-size:14px;
   
   padding-left: 50px;
-  grid-column: 1 / span 2; 
+  grid-column: 1 / span 3; 
   grid-row: 17;
 }
 
@@ -144,10 +158,10 @@ left: 50px;
   font-style: normal;
   position: relative;
   text-transform: lowercase;
-  font-size:12px;
+  font-size:14px;
  
   padding-left: 50px;
-  grid-column: 3 / span 2; 
+  grid-column: 4 / span 3; 
   grid-row: 17;
 }
 
@@ -165,7 +179,7 @@ left: 50px;
 
 
 .mainlinks {
-  grid-column: 3 / span 10; /* Adjust the start and span of columns */
+  grid-column: 4 / span 10; /* Adjust the start and span of columns */
   grid-row: 22 / span 2; /* Adjust the start and span of rows */
   display: flex; /* Optional: for arranging items horizontally or vertically */
   flex-direction: column; /* Stack items vertically */
@@ -195,12 +209,14 @@ left: 50px;
 
 
 .mainlinks ul li a {
-  font-family: "miller-banner", serif;
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 400;
+  font-style: normal;
   text-decoration: none;
-  font-size: 60px;
-  line-height: 1.2;
+  font-size: 40px;
+  line-height: 1;
   
-  font-weight: 500;
+  
   color: white;
   transition: color 0.2s ease;
 }
