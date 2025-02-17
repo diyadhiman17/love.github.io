@@ -212,7 +212,7 @@ left: 50px;
 
 
 /* Initially hide the elements */
-.h2-section, .h3-section, .h4-section, .h5-section, .h6-section {
+.h2-section, .h3-section, .h4-section, .h5-section, .h6-section, .mainlinks {
   opacity: 0;
   transform: translateY(20px); /* Slight upward movement */
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -237,9 +237,4 @@ left: 50px;
   pointer-events: none; /* Prevents interfering with clicks */
   z-index: 9999; /* Keeps it on top */
   transform: translate(-50%, -50%); /* Centers the dot */
-}
-.custom-cursor.hover {
-  width: 50px;
-  height: 30px;
-  transform: translate(-50%, -50%) scale(1.2);
 }

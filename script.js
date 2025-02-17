@@ -21,7 +21,7 @@ document.addEventListener("scroll", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const fadeElements = document.querySelectorAll(".h2-section, .h3-section, .h4-section, .h5-section, .h6-section");
+  const fadeElements = document.querySelectorAll(".h2-section, .h3-section, .h4-section, .h5-section, .h6-section, .mainlinks");
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
