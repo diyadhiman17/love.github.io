@@ -23,4 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
       cursor.style.top = `${e.clientY}px`;
     });
   });
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", function () {
+      const nextButton = document.querySelector(".next-button");
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+        nextButton.style.display = "block"; // Show button
+      } else {
+        nextButton.style.display = "none"; // Hide button
+      }
+    });
+  });

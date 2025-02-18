@@ -36,6 +36,9 @@
     padding: 10px 20px;
     list-style: none;
   }
+  nav ul li{
+    font-family: "IBM Plex Mono", serif;
+  }
   
   nav ul li a {
     font-family: "IBM Plex Mono", serif;
@@ -44,7 +47,9 @@
     font-size: 16px;
     font-weight: 400;
   }
-  
+  nav ul li a:hover {
+    color: gray; 
+  }
   
   
   .text{
@@ -164,9 +169,30 @@
   position: fixed;
   width: 20px;  /* Size of the cursor */
   height: 20px;
-  background-color: red;
+  background-color: #ba3b3b;
   border-radius: 50%;
   pointer-events: none; /* Prevents interfering with clicks */
   z-index: 9999; /* Keeps it on top */
   transform: translate(-50%, -50%); /* Centers the dot */
+}
+p a {
+  text-decoration: none; /* Removes the underline */
+  color: white; /* Matches the design */
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: gray; /* Changes color on hover */
+}
+
+.h6-section a {
+  text-decoration: none; /* Removes the underline */
+  color: white; /* Matches the design */
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.h6-section a:hover{
+color: gray;
 }

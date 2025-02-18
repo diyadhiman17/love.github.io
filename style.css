@@ -37,7 +37,9 @@ nav ul {
   list-style: none;
 }
 
-
+nav ul li{
+  font-family: "IBM Plex Mono", serif;
+}
 nav ul li a {
   font-family: "IBM Plex Mono", serif;
   text-decoration: none;
@@ -46,8 +48,11 @@ nav ul li a {
   font-weight: 400;
   transition: color 0.3s ease;
 }
+nav ul li a:hover {
+  color: gray; 
+}
 nav ul li a.hover-effect {
-  color: red; 
+  color: #ba3b3b; 
 }
 
 .text{
@@ -77,13 +82,14 @@ nav ul li a.hover-effect {
 }
 
 .h1-section:hover .highlight {
-  color: red;
+  color:#ba3b3b;
 }
 .h1-section {
+  font-family: "kepler-std", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: lowercase;
   
-  font-family: "celtic-mn", sans-serif;
-font-weight: 400;
-font-style: normal;
 
   position:absolute;
   text-wrap: no wrap;
@@ -120,6 +126,7 @@ left: 50px;
   font-size:14px;
 
   padding-top: 1000px;
+  left:20px;
   grid-column: 9 / span 3;
   grid-row: 12 ;
 }
@@ -132,7 +139,7 @@ left: 50px;
   text-transform: lowercase;
   top: 20px;
   font-size:14px;
-  
+  left:20px;
   grid-column: 9 / span 2;
   grid-row: 16;
 }
@@ -248,7 +255,7 @@ left: 50px;
   position: fixed;
   width: 20px;  /* Size of the cursor */
   height: 20px;
-  background-color: red;
+  background-color:#ba3b3b;
   border-radius: 50%;
   pointer-events: none; /* Prevents interfering with clicks */
   z-index: 9999; /* Keeps it on top */
