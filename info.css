@@ -26,7 +26,7 @@
     grid-column: 9/ -1;
     padding-left: 35px;
     grid-row: 1;
-    background-color: black;
+    
     z-index:10;
   }
   
@@ -180,3 +180,38 @@
     z-index: 9999; /* Keeps it on top */
     transform: translate(-50%, -50%); /* Centers the dot */
   }
+  @media (max-width: 768px) {
+    body{
+      height:350vh;
+    }
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start; /* Aligns to the left, change to center if preferred */
+      gap: 10px; /* Adds spacing between items */
+    }
+  
+    .h1-section {
+      max-width: 500px;
+      font-size: 80px; /* Adjust as needed */
+    }
+    .mainlinks ul li a {
+      font-size: 24px; /* Smaller font size for mobile */
+    }
+    .h2-section{
+      font-size:10px;
+    }
+    .h3-section{
+      font-size:10px;
+    }
+    .h4-section{
+      font-size:10px;
+    }
+    .h5-section{
+      font-size:10px;
+    }
+    .h6-section{
+      font-size:10px;
+    }
+  }
+  
+  

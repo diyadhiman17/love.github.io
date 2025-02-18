@@ -2,9 +2,11 @@ document.addEventListener("scroll", function () {
   let scrollPos = window.scrollY;
   let h1 = document.querySelector(".h1-section");
 
-  let minSize = 20;  // Smaller font size when scrolled
-  let maxSize = 150; // Original font size
-  let triggerScroll = 50; // Scroll position where it snaps
+  let isMobile = window.innerWidth <= 768; // Check if screen is small
+
+  let minSize = isMobile ? 14 : 20; // Smaller font for mobile
+  let maxSize = isMobile ? 80 : 150; // Adjusted max size for mobile
+  let triggerScroll = 50;
 
   if (scrollPos >= triggerScroll) {
     h1.style.position = "fixed";
@@ -14,11 +16,17 @@ document.addEventListener("scroll", function () {
     h1.style.padding = "0";
   } else {
     h1.style.position = "relative";
-    h1.style.top = "450px";
+    h1.style.top = isMobile ? "450px" : "450px"; // Adjust top position for mobile
     h1.style.left = "50px";
     h1.style.fontSize = `${maxSize}px`;
   }
 });
+
+// Update styles on window resize to ensure responsiveness
+window.addEventListener("resize", function () {
+  document.dispatchEvent(new Event("scroll"));
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const fadeElements = document.querySelectorAll(".h2-section, .h3-section, .h4-section, .h5-section, .h6-section, .mainlinks");
