@@ -15,7 +15,7 @@ body {
   grid-template-columns: repeat(12, 1fr); /* 12-column grid for manual positioning */
   grid-template-rows: repeat(12, minmax(50px, auto)); /* 12 rows for grid positioning */
   gap: 10px;
-  height: 340vh;
+  height: 320vh;
   margin: 0;
   overflow-x: hidden;
   
@@ -85,12 +85,12 @@ nav ul li a.hover-effect {
   color:#ba3b3b;
 }
 .h1-section {
-  font-family: "kepler-std", serif;
+  font-family: "celtic-mn", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-transform: lowercase;
   
-
+text-transform: capitalize;
   position:absolute;
   text-wrap: no wrap;
   line-height: 1;
